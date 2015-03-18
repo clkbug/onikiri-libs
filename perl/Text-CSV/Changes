@@ -1,0 +1,99 @@
+Revision history for Perl extension Text::CSV.
+
+1.09  Fri Sep  5 11:34:00 2008
+	- updated the compatibility for Text::CSV_XS version 0.54
+	    * default eol for print is $\
+	    * fixed SetDiag(0)
+	    * IO failure in print
+
+	**** Text::CSV_PP doesn't support the error msg 2023 ****
+
+1.08  Fri Aug 22 11:21:38 2008
+	- fixed a bug in parsing tab separated values with allow_whitespace
+	    pointed by and thanks a patch to Mike O'Sullivan
+
+1.07  Fri Aug  1 11:13:06 2008
+	- updated the compatibility for Text::CSV_XS version 0.52
+	    modified column_names()
+	- fixed a parsing bug with quote_char being undef
+	    pointed by Matt (rt#38083)
+
+1.06  Wed Jun 18 14:35:40 2008
+	- updated the compatibility for Text::CSV_XS version 0.51
+	    * set binary => 1 when UTF8 flag marked.
+	    * removed the max of 255 for bind_columns.
+	- made the value type of $csv->{_STRING} corresponding to XS.
+
+1.05  Fri May  2 13:15:49 2008
+	- fixed quoting process in combine.
+	    because of using bytes.pm, added a dummy for Perl 5.005
+	- renamed combine, parse, string and fields internally.
+	    (for coming Text::CSV::Encoded)
+	- removed dynamic mode.
+
+1.04  Tue Apr 22 16:01:19 2008
+	- updated the compatibility for Text::CSV_XS version 0.43
+	    * parse errors try to remember failing position
+              (but in using PP version backend, it is usually helpless)
+	- fix a serious bug with setter methods.
+	    all setter methods couldn't take undef value...
+
+1.03  Fri Apr 11 17:39:12 2008
+	- updated the compatibility for Text::CSV_XS version 0.41
+	    getline_hr, column_names, bind_columns
+	- Makefile.PL requires Perl versoin from 5.005 to 5.00503.
+	- fixed combine() for quoting binary chars.
+	- updated the document as same as Text::CSV_XS 0.41.
+
+1.02  Fri Mar  7 07:37:11 2008
+	- updated the compatibility for Text::CSV_XS version 0.36
+	    * auto-load IO::Handle when needed
+	- fixed version() and its doc (Text::CSV and Text::CSV_PP).
+	    Text::CSV->version returns the worker module version.
+            Thanks to Robin Barker's patche.
+
+1.01  Tue Mar  4 02:33:28 2008
+	- updated the compatibilities for Text::CSV_XS version 0.35
+	    * diagnostics for failed new ()
+	    * 'blank_is_undef' option
+	    * enhanced the error messages
+	- updated docs
+	- fixed allow_whitespace()
+        - modifiled t/80_diag.t for overloaded error object.
+
+1.00  Wed Nov 28 14:28:30 2007
+	- renamed $ENV{TEXT_CSV_XS} to $ENV{PERL_TEXT_CSV}
+	- added $ENV{PERL_TEXT_CSV} acceptable values
+	- deleted the dynamic mode section from the pod doc
+	- deleted t/exp01-dynamic.t
+	    (the feature still remains.)
+
+
+0.99_06 Thu Nov  8 13:24:31 2007
+	- modified _set_methods for Pod::Coverage test
+	- added t/exp01-dynamic.t
+
+0.99_05  Wed Nov  7 16:15:34 2007 (Text::CSV_PP 1.08)
+	- added 'dynamic mode' which can specify the worker module in new()ing
+            This is so experimental that may be removed.
+	- modified prototypes of Text::CSV_PP::NV, IV, PV
+
+0.99_04  Tue Nov  6 13:40:47 2007 (Text::CSV_PP 1.07)
+	- re-rename Text::CSV_PP
+	- added TODO
+
+0.99_03  Mon Nov  5 16:00:00 2007
+	- CPAN released but beta version.
+	- test suits are from Text::CSV_XS 0.32 and modfied for Text::CSV tests.
+
+0.99_02  Fri Nov  2 14:37:30 2007
+	- pre release version.
+	- passed the all Text::CSV_XS 0.32 test suits
+
+0.99  Sat Jun 23 17:10:47 2007
+	- maintainer was changed.
+	- rewritten to make a wrapper to Text::CSV_XS and Text::CSV_PP
+
+0.01  06/05/1997
+	- original version by Alan Citterman
+

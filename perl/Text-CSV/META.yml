@@ -1,0 +1,16 @@
+--- #YAML:1.0
+name:                Text-CSV
+version:             1.09
+abstract:            comma-separated values manipulator (using XS or PurePerl)
+license:             ~
+author:              
+    - Makamaka Hannyaharamitu, E<lt>makamaka[at]cpan.orgE<gt>
+generated_by:        ExtUtils::MakeMaker version 6.42
+distribution_type:   module
+requires:     
+    IO::Handle:                    0
+    Test::Harness:                 0
+    Test::More:                    0
+meta-spec:
+    url:     http://module-build.sourceforge.net/META-spec-v1.3.html
+    version: 1.3
